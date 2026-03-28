@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bryan Rivera - Web Developer & Business Intelligence Enthusiast. Specializing in React, Node.js, and data visualization.">
+    <meta name="keywords" content="web developer, business intelligence, react, node.js, portfolio">
+    <meta name="author" content="Bryan Rivera">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bryan Rivera - Portfolio">
+    <meta property="og:description" content="Web Developer & Business Intelligence Enthusiast">
+    <meta property="og:image" content="path/to/preview-image.jpg">
+
+    <title>Bryan Rivera - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="bg-animation"></div>
+
+    <!-- Toggle button -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+    </button>
+
+    <!-- Side drawer -->
+    <nav class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="sidebar-close" aria-label="Close navigation">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <a href="#" class="logo">Bryan Rivera</a>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="visit-btn">Visit Github</a>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <section id="about" class="about">
+        <div class="about-container fade-in">
+            <div class="info-box">
+                <h3>Hi, I'm</h3>
+                <h1>Bryan Rivera</h1>
+                <p class="role">Web Developer & Business Intelligence Enthusiast</p>
+                <p class="bio">I build clean, performant web applications and data-driven solutions. Passionate about turning complex problems into simple, intuitive experiences.</p>
+
+                <div class="btn-group">
+                    <a href="path/to/your-resume.pdf" download="Bryan_Rivera_Resume.pdf" class="btn btn-primary">Download Resume</a>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="section-header fade-in">
+            <h3 class="section-label">What I've done</h3>
+            <h2 class="section-title">Experience</h2>
+            <p class="section-desc">A breakdown of my technical background and the areas I've spent the most time building in.</p>
+        </div>
+
+        <div class="grid fade-in">
+            <div class="grid-card">
+                    <i class="fa-solid fa-code"></i>
+                    <span>Frontend Development</span>
+                    <p>Specialized in React, Vue.js, and modern JavaScript frameworks. Built responsive, user-friendly interfaces with a focus on performance and accessibility.</p>
+                </div>
+
+                <div class="grid-card">
+                    <i class="fa-solid fa-palette"></i>
+                    <span>UI/UX Design</span>
+                    <p>Created intuitive user experiences through wireframing, prototyping, and visual design. Proficient in Figma, Adobe Creative Suite, and design systems.</p>
+                </div>
+
+                <div class="grid-card">
+                    <i class="fa-solid fa-server"></i>
+                    <span>Backend Development</span>
+                    <p>Experienced in Node.js, Python, and database management. Built scalable APIs and microservices architecture for enterprise applications.</p>
+                </div>
+
+                <div class="grid-card">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Business Intelligence</span>
+                    <p>Developed data visualization dashboards and analytics solutions. Skilled in SQL, Power BI, and data analysis for business insights.</p>
+                </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="section-header fade-in">
+            <h3 class="section-label">What I've built</h3>
+            <h2 class="section-title">Projects</h2>
+            <p class="section-desc">A selection of recent work. Each project links to a live demo and source code.</p>
+        </div>
+
+        <div class="projects-grid fade-in" id="projects-grid"></div>
+    </section>
+
+    <footer>
+        <div class="footer-socials">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p class="copyright">Designed & built by Bryan Rivera · <span id="year"></span></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

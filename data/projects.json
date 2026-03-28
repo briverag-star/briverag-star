@@ -1,0 +1,20 @@
+[
+  {
+    "title": "E-Commerce Platform",
+    "description": "Full-stack e-commerce solution built with React and Node.js. Features include user authentication, payment integration, and admin dashboard.",
+    "demo": "#",
+    "repo": "#"
+  },
+  {
+    "title": "Analytics Dashboard",
+    "description": "Interactive business intelligence dashboard with real-time data visualization. Built using D3.js and integrates with multiple data sources.",
+    "demo": "#",
+    "repo": "#"
+  },
+  {
+    "title": "Task Management App",
+    "description": "Cross-platform mobile application built with React Native. Features include task tracking, team collaboration, and push notifications.",
+    "demo": "#",
+    "repo": "#"
+  }
+]
