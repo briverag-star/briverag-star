@@ -36,26 +36,54 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 
 
+// Sanitize URLs to only allow http/https
+function safeUrl(url) {
+    try {
+        const u = new URL(url, location.href);
+        return ['http:', 'https:'].includes(u.protocol) ? u.href : '#';
+    } catch {
+        return '#';
+    }
+}
+
 // Load projects from JSON
 fetch('data/projects.json')
     .then(res => res.json())
     .then(projects => {
         const grid = document.getElementById('projects-grid');
-        grid.innerHTML = projects.map(p => `
-            <div class="project-card">
-                <h3>${p.title}</h3>
-                <p>${p.description}</p>
-                <div class="project-links">
-                    <a href="${p.demo}" target="_blank" rel="noopener noreferrer" aria-label="Live Demo"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    <a href="${p.repo}" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repo"><i class="fa-brands fa-github"></i></a>
-                </div>
-            </div>
-        `).join('');
+        grid.innerHTML = '';
 
-        // Re-observe fade-in elements after dynamic render
-        grid.querySelectorAll('.project-card').forEach(el => {
-            el.classList.add('fade-in');
-            observer.observe(el);
+        projects.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'project-card fade-in';
+
+            const title = document.createElement('h3');
+            title.textContent = p.title;
+
+            const desc = document.createElement('p');
+            desc.textContent = p.description;
+
+            const links = document.createElement('div');
+            links.className = 'project-links';
+
+            const demoLink = document.createElement('a');
+            demoLink.href = safeUrl(p.demo);
+            demoLink.target = '_blank';
+            demoLink.rel = 'noopener noreferrer';
+            demoLink.setAttribute('aria-label', 'Live Demo');
+            demoLink.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+
+            const repoLink = document.createElement('a');
+            repoLink.href = safeUrl(p.repo);
+            repoLink.target = '_blank';
+            repoLink.rel = 'noopener noreferrer';
+            repoLink.setAttribute('aria-label', 'GitHub Repo');
+            repoLink.innerHTML = '<i class="fa-brands fa-github"></i>';
+
+            links.append(demoLink, repoLink);
+            card.append(title, desc, links);
+            grid.appendChild(card);
+            observer.observe(card);
         });
     });
 
